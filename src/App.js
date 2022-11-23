@@ -1,25 +1,35 @@
-import './App.css';
+import { useState } from "react";
+import "./App.css";
 
 function App() {
+  const [cards, setCards] = useState("Octocat.png");
+
+  async function drawCard() {
+    const response = await fetch(
+      `https://deckofcardsapi.com/api/deck/new/draw/?count=1`
+    );
+    const data = await response.json();
+    const img = data.cards.map((card) => card.image);
+    setCards(img[0]);
+    console.log(data);
+  }
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src="Octocat.png" className="App-logo" alt="logo" />
         <p>
-          GitHub Codespaces <span className="heart">♥️</span> React
+          <code>Card Guessing Game</code>
         </p>
-        <p className="small">
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
+        <img
+          src={cards}
+          className="card"
+          alt="card"
+          onClick={() => {
+            drawCard();
+          }}
+        />
         <p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
+          <code>Click the card to draw another</code>
         </p>
       </header>
     </div>
