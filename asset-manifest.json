@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/card-guessing-game/static/css/main.0a9dbc9e.css",
+    "main.js": "/card-guessing-game/static/js/main.d33c8216.js",
+    "index.html": "/card-guessing-game/index.html",
+    "main.0a9dbc9e.css.map": "/card-guessing-game/static/css/main.0a9dbc9e.css.map",
+    "main.d33c8216.js.map": "/card-guessing-game/static/js/main.d33c8216.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.0a9dbc9e.css",
+    "static/js/main.d33c8216.js"
+  ]
+}
